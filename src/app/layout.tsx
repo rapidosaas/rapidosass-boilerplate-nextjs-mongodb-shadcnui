@@ -8,6 +8,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Suspense } from "react";
 
+import PlausibleProvider from "next-plausible";
+
+import { Toaster } from "@/components/ui/sonner"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,6 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <PlausibleProvider domain="cabasbusiness.com" customDomain="https://plausible.codewithadu.de" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -40,6 +47,18 @@ export default function RootLayout({
             </Suspense>
           <Footer />
         </AuthProvider>
+        <Toaster
+          position="top-right"
+          richColors
+          closeButton
+          duration={5000}
+          toastOptions={{
+            className: "bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100",
+            style: {
+              fontFamily: "var(--font-geist-sans)",
+            },
+          }}
+        />
       </body>
     </html>
   );

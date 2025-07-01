@@ -8,22 +8,22 @@ function Hero () {
         <div className="mx-auto max-w-2xl py-20 sm:py-32 lg:py-40">
           <div className="text-center">
             <h1 className="text-balance text-xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-              Find Your Next 
+              Find The Right 
               {' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-600">
-                Bag Businessman
+                Cabas
               </span>{' '}
               And More
             </h1>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-700 sm:text-xl/8">
-                BagBusiness is a platform designed to connect entrepreuneurs with people searching for particular products.
+                CabasBusiness is a platform designed to connect micro-importers with customers searching for particular products.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
-                href="/bags"
+                href="/cabas"
                 className={`${buttonVariants({ variant: "default" })}`}
               >
-                Find Bags
+                Find a Cabas
               </Link>
             </div>
           </div>

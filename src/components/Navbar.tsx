@@ -54,8 +54,8 @@ export default function Navbar() {
 
   const AuthenticatedNavLinks = [
     { 
-      href: "/bags", 
-      label: "Bags",
+      href: "/cabas", 
+      label: "Cabas",
     },
   ];
 
@@ -78,7 +78,7 @@ export default function Navbar() {
         <nav className="m-auto flex max-w-5xl items-center justify-between px-3 py-5">
           <Link href="/">
           <h1 className="flex items-center text-2xl font-bold">
-            <span className="text-blue-300">Bag</span><span className="text-blue-600">Business</span>
+            <span className="text-blue-300">Cabas</span><span className="text-blue-600">Business</span>
           </h1>
           </Link>
           <div className="flex items-center space-x-4">
@@ -101,7 +101,7 @@ export default function Navbar() {
       <nav className="m-auto flex max-w-5xl items-center justify-between px-3 py-5">
         <Link href="/">
         <h1 className="flex items-center text-2xl font-bold">
-          <span className="text-blue-300">neo</span><span className="text-blue-600">Freelance</span>
+          <span className="text-blue-300">Cabas</span><span className="text-blue-600">Business</span>
         </h1>
         </Link>
         <div className="flex items-center space-x-4">
