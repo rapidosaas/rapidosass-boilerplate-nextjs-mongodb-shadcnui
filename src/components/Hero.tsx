@@ -1,47 +1,43 @@
 "use client"
+import Image from 'next/image'
 import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button"
+import unsplash from '/public/kenny-eliason-hKegPH8_4Rg-unsplash.jpg'
 
 function Hero () {
     return (
-    <section className="relative isolate px-6 pt-8 lg:px-8">
-        <div className="mx-auto max-w-2xl py-20 sm:py-32 lg:py-40">
-          <div className="text-center">
-            <h1 className="text-balance text-xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-              Find The Right 
-              {' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-600">
-                Cabas
-              </span>{' '}
-              And More
-            </h1>
-            <p className="mt-8 text-pretty text-lg font-medium text-gray-700 sm:text-xl/8">
-                CabasBusiness is a platform designed to connect micro-importers with customers searching for particular products.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/cabas"
-                className={`${buttonVariants({ variant: "default" })}`}
-              >
-                Find a Cabas
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        <section
+        className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center flex-1"
         >
-          <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-blue-300 to-blue-600 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-          />
+        <div className="p-8 md:p-12 lg:px-16 lg:py-24">
+            <div
+            className="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right"
+            >
+            <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-white">
+                The best way to manage online business
+            </h2>
+
+            <p className="hidden text-gray-500 md:mt-4 md:block dark:text-white">
+                Turn your business dreams into reality with our online business management application. Build a network, expand your reach, and achieve new heights of success.
+            </p>
+
+            <div className="mt-4 md:mt-8">
+                <Link
+                href="/pricing"
+                className={`${buttonVariants({ variant: "default" })}`}
+                >
+                Get Started Today
+                </Link>
+            </div>
+            </div>
         </div>
-      </section>
-    
+
+        <Image
+            alt="Sleep while make money"
+            src={unsplash}
+            className="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
+        />
+        </section>
     )
 }
 

@@ -1,34 +1,31 @@
-"use client";
-import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
-import { useEffect } from "react";
+"use client"
+import Header from '@/components/Header'
+import SideNav from '@/components/SideNav'
+import SideNavSticky from '@/components/SideNavSticky'
 
+import { useSession } from "next-auth/react"
+import { redirect } from 'next/navigation';
 
-function Dashboard() {
-    const { data: session, status } = useSession();
+function Dashboard () {
 
-    useEffect(() => {
-        if (status === "loading") return; // Wait for session to load
+        const { data: session } = useSession();
+
         if (!session) {
-            redirect('/');
+                redirect('/');
         }
-    }, [session, status]);
 
-    if (status === "loading") {
-        return null; // Or a loading spinner
-    }
-    if (!session) {
-        return null;
-    }
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
-            <div className="mb-8 p-6 border rounded-lg shadow-md bg-slate-50">
-                <p className="text-gray-600 mb-4">Your dashboard is coming soon.</p>
+        <>
+            <Header session = { session } />
+            <div className="grid h-screen min-h-screen w-full overflow-hidden md:grid-cols-[auto_1fr]">
+                    <SideNav />
+                    <div className="flex flex-col">
+                            <SideNavSticky />                
+                    </div>
             </div>
-        </div>
+        </>
     )
 }
 
-export default Dashboard;
+export default Dashboard
